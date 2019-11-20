@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>geometry | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="Geometry">
+  
+  
+  
+  
+  <meta name="description" content="計算幾何 基本操作 幾何模板123456789101112131415161718192021222324typedef double Double;struct Point &amp;#123;  Double x,y;  bool operator &amp;lt; (const Point &amp;amp;b)const&amp;#123;    // 比較    //return tie(x,y) &amp;lt; tie(b">
+<meta name="keywords" content="Geometry">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Geometry">
+<meta property="og:url" content="http://yoursite.com/2019/11/20/Geometry/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="計算幾何 基本操作 幾何模板123456789101112131415161718192021222324typedef double Double;struct Point &amp;#123;  Double x,y;  bool operator &amp;lt; (const Point &amp;amp;b)const&amp;#123;    // 比較    //return tie(x,y) &amp;lt; tie(b">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://i.imgur.com/DQE9ARP.png">
+<meta property="og:image" content="https://i.imgur.com/cnT8GFs.png">
+<meta property="og:image" content="https://i.imgur.com/iHmMosU.gif">
+<meta property="og:image" content="https://i.imgur.com/N0YWQbV.gif">
+<meta property="og:image" content="https://i.imgur.com/ZApk30b.png">
+<meta property="og:image" content="https://i.imgur.com/7jlTccN.png">
+<meta property="og:image" content="https://i.imgur.com/A78agO1.png">
+<meta property="og:image" content="https://i.imgur.com/VF0fAXx.png">
+<meta property="og:image" content="https://i.imgur.com/VhW8AK1.png">
+<meta property="og:image" content="https://i.imgur.com/7BPf3zB.png">
+<meta property="og:image" content="https://i.imgur.com/QcYqsTb.png">
+<meta property="og:image" content="https://i.imgur.com/8lwmhug.png">
+<meta property="og:image" content="https://i.imgur.com/GqZJELz.png">
+<meta property="og:image" content="https://i.imgur.com/3cX6FcR.png">
+<meta property="og:image" content="https://i.imgur.com/ixTWxo7.png">
+<meta property="og:image" content="https://i.imgur.com/lDIwWp1.png">
+<meta property="og:image" content="https://i.imgur.com/toZ59vf.png">
+<meta property="og:image" content="https://i.imgur.com/MiLC0cn.png">
+<meta property="og:image" content="https://i.imgur.com/58zAwbo.png">
+<meta property="og:image" content="https://i.imgur.com/NY6B7vh.png">
+<meta property="og:image" content="https://i.imgur.com/FMql3YZ.png">
+<meta property="og:image" content="https://i.imgur.com/aX6PSyK.gif">
+<meta property="og:image" content="https://i.imgur.com/yvWORoL.gif">
+<meta property="og:image" content="https://i.imgur.com/v9Xz1Hp.gif">
+<meta property="og:image" content="https://i.imgur.com/b80X3IH.gif">
+<meta property="og:image" content="https://i.imgur.com/v7jnspo.png">
+<meta property="og:image" content="https://i.imgur.com/GTmYxKo.png">
+<meta property="og:image" content="https://i.imgur.com/eaZbOyf.png">
+<meta property="og:image" content="https://i.imgur.com/03tdX9K.png">
+<meta property="og:image" content="https://i.imgur.com/Qmo3Ko5.png">
+<meta property="og:image" content="https://i.imgur.com/vLSZKiQ.png">
+<meta property="og:image" content="https://i.imgur.com/eoejXLA.png">
+<meta property="og:image" content="https://i.imgur.com/YEHeoiL.png">
+<meta property="og:image" content="https://i.imgur.com/Ee6QAPK.png">
+<meta property="og:image" content="https://i.imgur.com/7OQp00K.png">
+<meta property="og:image" content="https://i.imgur.com/SZs77u9.png">
+<meta property="og:image" content="https://i.imgur.com/4seR32w.png">
+<meta property="og:updated_time" content="2019-11-20T08:11:34.352Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Geometry">
+<meta name="twitter:description" content="計算幾何 基本操作 幾何模板123456789101112131415161718192021222324typedef double Double;struct Point &amp;#123;  Double x,y;  bool operator &amp;lt; (const Point &amp;amp;b)const&amp;#123;    // 比較    //return tie(x,y) &amp;lt; tie(b">
+<meta name="twitter:image" content="https://i.imgur.com/DQE9ARP.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+
+  
+
+  <link rel="icon" href="/css/images/me.jpg">
+  <link rel="apple-touch-icon" href="/css/images/me.jpg">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt; src:url("css/fonts/FuturaPTBold.otf") format("woff");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt-light; src:url("css/fonts/FuturaPTBook.otf") format("woff");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt-italic; src:url("css/fonts/FuturaPTBookOblique.otf") format("woff");font-weight:400;font-style:italic;}
+}
+
+  </style>
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="/js/jquery-3.1.1.min.js"></script>
+  <script src="/js/bootstrap.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css">
+
+  
+    <link rel="stylesheet" href="/css/dialog.css">
+  
+
+  
+
+  
+    <link rel="stylesheet" href="/css/header-post.css">
+  
+
+  
+  
+  
+
+</head>
+</html>
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+  <div id="container">
+    <div id="wrap">
+      
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" style="
+                 margin-top: 0px;"  
+                href="#" data-toggle="modal" data-target="#myModal" >
+                  <img width="124px" height="124px" alt="Hike News" src="/css/images/me.jpg">
+              </a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="hnav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="/">Home</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/archives">Archives</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/categories">Categories</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/tags">Tags</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/about">About</a> </li>
+                
+                  <li><div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div></li>
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-Geometry" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      Geometry
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2019/11/20/Geometry/" class="article-date">
+	  <time datetime="2019-11-20T00:00:00.000Z" itemprop="datePublished">2019-11-20</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Algorithm/">Algorithm</a>
+
+      
+	<a class="article-views">
+	<span id="busuanzi_container_page_pv">
+		PV:<span id="busuanzi_value_page_pv"></span>
+	</span>
+	</a>
+
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="計算幾何"><a href="#計算幾何" class="headerlink" title="計算幾何"></a>計算幾何</h1><hr>
+<h2 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h2><hr>
+<h3 id="幾何模板"><a href="#幾何模板" class="headerlink" title="幾何模板"></a>幾何模板</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">double</span> Double;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Point</span> &#123;</span></span><br><span class="line">  Double x,y;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (<span class="keyword">const</span> Point &amp;b)<span class="keyword">const</span>&#123;    <span class="comment">// 比較</span></span><br><span class="line">    <span class="comment">//return tie(x,y) &lt; tie(b.x,b.y);</span></span><br><span class="line">    <span class="comment">//return atan2(y,x) &lt; atan2(b.y,b.x);</span></span><br><span class="line">  &#125;</span><br><span class="line">  Point <span class="keyword">operator</span> + (<span class="keyword">const</span> Point &amp;b)<span class="keyword">const</span>&#123;   <span class="comment">// 向量加法</span></span><br><span class="line">    <span class="keyword">return</span> (Point)&#123;x+b.x,y+b.y&#125;;</span><br><span class="line">  &#125;</span><br><span class="line">  Point <span class="keyword">operator</span> - (<span class="keyword">const</span> Point &amp;b)<span class="keyword">const</span>&#123;   <span class="comment">// 向量減法</span></span><br><span class="line">    <span class="keyword">return</span> (Point)&#123;x-b.x,y-b.y&#125;;</span><br><span class="line">  &#125;</span><br><span class="line">  Point <span class="keyword">operator</span> * (<span class="keyword">const</span> Double &amp;d)<span class="keyword">const</span>&#123;  <span class="comment">// 向量伸縮</span></span><br><span class="line">    <span class="keyword">return</span> Point(d*x,d*y);</span><br><span class="line">  &#125;</span><br><span class="line">  Double <span class="keyword">operator</span> * (<span class="keyword">const</span> Point &amp;b)<span class="keyword">const</span>&#123;  <span class="comment">// 向量內積</span></span><br><span class="line">    <span class="keyword">return</span> x*b.x + y*b.y;</span><br><span class="line">  &#125;</span><br><span class="line">  Double <span class="keyword">operator</span> % (<span class="keyword">const</span> Point &amp;b)<span class="keyword">const</span>&#123;  <span class="comment">// 向量外積</span></span><br><span class="line">    <span class="keyword">return</span> x*b.y - y*b.x;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="向量加法"><a href="#向量加法" class="headerlink" title="向量加法"></a>向量加法</h3><ul>
+<li>$w = u+v$<br><img src="https://i.imgur.com/DQE9ARP.png" alt></li>
+</ul>
+<hr>
+<h3 id="向量減法"><a href="#向量減法" class="headerlink" title="向量減法"></a>向量減法</h3><ul>
+<li>$w = u-v$<br><img src="https://i.imgur.com/cnT8GFs.png" alt></li>
+</ul>
+<hr>
+<h3 id="向量內積-dot"><a href="#向量內積-dot" class="headerlink" title="向量內積(dot)"></a>向量內積(dot)</h3><ul>
+<li>藍色長度 x 綠色長度<br><img src="https://i.imgur.com/iHmMosU.gif" alt></li>
+</ul>
+<hr>
+<h3 id="向量外積-cross-有向面積"><a href="#向量外積-cross-有向面積" class="headerlink" title="向量外積(cross) - 有向面積"></a>向量外積(cross) - 有向面積</h3><ul>
+<li>藍色長度 x 綠色長度</li>
+<li>右手定則, 順時鐘為正, 逆時鐘為負<br><img src="https://i.imgur.com/N0YWQbV.gif" alt></li>
+</ul>
+<hr>
+<h3 id="問題"><a href="#問題" class="headerlink" title="問題"></a>問題</h3><ol>
+<li>點到直線的距離</li>
+<li>兩個直線的交點</li>
+<li>線段相交判定</li>
+<li>簡單多邊形面積</li>
+</ol>
+<hr>
+<h3 id="問題-1-點到直線的距離"><a href="#問題-1-點到直線的距離" class="headerlink" title="問題 1 : 點到直線的距離"></a>問題 1 : 點到直線的距離</h3><ul>
+<li>cross / 方向向量長度</li>
+</ul>
+<hr>
+<h3 id="問題-2-兩個直線的交點"><a href="#問題-2-兩個直線的交點" class="headerlink" title="問題 2 : 兩個直線的交點"></a>問題 2 : 兩個直線的交點</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Point <span class="title">GetLineIntersection</span><span class="params">(Point P,Vector v,Point Q,Vector w)</span></span>&#123;</span><br><span class="line">    Point u = P-Q;</span><br><span class="line">    <span class="keyword">double</span> t = Cross(w,u) / Cross(v,w);</span><br><span class="line">    <span class="keyword">return</span> P + v*t;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="問題-3-線段相交判定"><a href="#問題-3-線段相交判定" class="headerlink" title="問題 3 : 線段相交判定"></a>問題 3 : 線段相交判定</h3><ul>
+<li>利用直線求交點，判斷交點是否在線段上</li>
+<li>滿足任三點不共線時?</li>
+</ul>
+<hr>
+<h3 id="問題-3-線段相交判定-cont"><a href="#問題-3-線段相交判定-cont" class="headerlink" title="問題 3 : 線段相交判定(cont.)"></a>問題 3 : 線段相交判定(cont.)</h3><p><img src="https://i.imgur.com/ZApk30b.png" alt></p>
+<hr>
+<h3 id="問題-3-線段相交判定-cont-1"><a href="#問題-3-線段相交判定-cont-1" class="headerlink" title="問題 3 : 線段相交判定(cont.)"></a>問題 3 : 線段相交判定(cont.)</h3><ul>
+<li>$sign(u\times b) = sign(b\times v)$<br><img src="https://i.imgur.com/7jlTccN.png" alt></li>
+</ul>
+<hr>
+<h3 id="問題-4-簡單多邊形面積-三角型"><a href="#問題-4-簡單多邊形面積-三角型" class="headerlink" title="問題 4 : 簡單多邊形面積 - 三角型"></a>問題 4 : 簡單多邊形面積 - 三角型</h3><ul>
+<li>$| u \times v | / 2$<br><img src="https://i.imgur.com/A78agO1.png" alt></li>
+</ul>
+<hr>
+<h3 id="問題-4-簡單多邊形面積-凸多邊形"><a href="#問題-4-簡單多邊形面積-凸多邊形" class="headerlink" title="問題 4 : 簡單多邊形面積 - 凸多邊形"></a>問題 4 : 簡單多邊形面積 - 凸多邊形</h3><ul>
+<li>從頂點當原點三角剖分，三角形面積相加<br><img src="https://i.imgur.com/VF0fAXx.png" alt></li>
+</ul>
+<hr>
+<h3 id="問題-4-簡單多邊形面積-凸多邊形-1"><a href="#問題-4-簡單多邊形面積-凸多邊形-1" class="headerlink" title="問題 4 : 簡單多邊形面積 - 凸多邊形"></a>問題 4 : 簡單多邊形面積 - 凸多邊形</h3><ul>
+<li>內部選一個點當原點三角剖分，將三角形面積相加<br><img src="https://i.imgur.com/VhW8AK1.png" alt></li>
+</ul>
+<hr>
+<h3 id="問題-4-簡單多邊形面積-凸多邊形-2"><a href="#問題-4-簡單多邊形面積-凸多邊形-2" class="headerlink" title="問題 4 : 簡單多邊形面積 - 凸多邊形"></a>問題 4 : 簡單多邊形面積 - 凸多邊形</h3><ul>
+<li>任意選一個點當原點三角剖分，將三角形<strong>有向</strong>面積相加</li>
+<li>圖中藍色是會被扣的，面積方向不同<br><img src="https://i.imgur.com/7BPf3zB.png" alt></li>
+</ul>
+<hr>
+<h3 id="問題-4-簡單多邊形面積"><a href="#問題-4-簡單多邊形面積" class="headerlink" title="問題 4 : 簡單多邊形面積"></a>問題 4 : 簡單多邊形面積</h3><ul>
+<li>在簡單多邊形同樣成立!! 開心/<br><img src="https://i.imgur.com/QcYqsTb.png" alt></li>
+</ul>
+<hr>
+<h2 id="判斷點在圖形內"><a href="#判斷點在圖形內" class="headerlink" title="判斷點在圖形內"></a>判斷點在圖形內</h2><hr>
+<h3 id="圓形"><a href="#圓形" class="headerlink" title="圓形"></a>圓形</h3><p><img src="https://i.imgur.com/8lwmhug.png" alt></p>
+<hr>
+<h3 id="圓形-cont"><a href="#圓形-cont" class="headerlink" title="圓形(cont.)"></a>圓形(cont.)</h3><ul>
+<li>到圓心的距離小於等於 $r$</li>
+</ul>
+<hr>
+<h3 id="矩形-邊平行x軸-y軸"><a href="#矩形-邊平行x軸-y軸" class="headerlink" title="矩形 (邊平行x軸,y軸)"></a>矩形 (邊平行x軸,y軸)</h3><p><img src="https://i.imgur.com/GqZJELz.png" alt></p>
+<hr>
+<h3 id="矩形-邊平行x軸-y軸-cont"><a href="#矩形-邊平行x軸-y軸-cont" class="headerlink" title="矩形 (邊平行x軸,y軸)(cont.)"></a>矩形 (邊平行x軸,y軸)(cont.)</h3><ul>
+<li>x 座標在範圍內</li>
+<li>y 座標在範圍內</li>
+</ul>
+<hr>
+<h3 id="三角形"><a href="#三角形" class="headerlink" title="三角形"></a>三角形</h3><p><img src="https://i.imgur.com/3cX6FcR.png" alt></p>
+<hr>
+<h3 id="三角形-cont"><a href="#三角形-cont" class="headerlink" title="三角形(cont.)"></a>三角形(cont.)</h3><ul>
+<li>都在線的同一邊( cross 同號或為 0 )</li>
+</ul>
+<hr>
+<h3 id="凸多邊形"><a href="#凸多邊形" class="headerlink" title="凸多邊形"></a>凸多邊形</h3><ul>
+<li>凸多邊形內部<br><img src="https://i.imgur.com/ixTWxo7.png" alt></li>
+</ul>
+<hr>
+<h3 id="凸多邊形-1"><a href="#凸多邊形-1" class="headerlink" title="凸多邊形"></a>凸多邊形</h3><ul>
+<li>凸多邊形邊上<br><img src="https://i.imgur.com/lDIwWp1.png" alt></li>
+</ul>
+<hr>
+<h3 id="凸多邊形-cont"><a href="#凸多邊形-cont" class="headerlink" title="凸多邊形(cont.)"></a>凸多邊形(cont.)</h3><ul>
+<li>凸包點照逆時針排好，cross 都大於等於 0 <ul>
+<li>時間 $O(n)$</li>
+</ul>
+</li>
+<li>多次查詢?</li>
+</ul>
+<hr>
+<h3 id="凸多邊形多次查詢"><a href="#凸多邊形多次查詢" class="headerlink" title="凸多邊形多次查詢"></a>凸多邊形多次查詢</h3><p><img src="https://i.imgur.com/toZ59vf.png" alt></p>
+<hr>
+<h3 id="凸多邊形多次查詢-cont"><a href="#凸多邊形多次查詢-cont" class="headerlink" title="凸多邊形多次查詢(cont.)"></a>凸多邊形多次查詢(cont.)</h3><ul>
+<li>將一個頂點當圓點, 三角剖分</li>
+<li>二分搜尋極角</li>
+<li>判斷是否在三角形內</li>
+<li>每次 query $O(\log n)$</li>
+</ul>
+<hr>
+<h3 id="簡單多邊形"><a href="#簡單多邊形" class="headerlink" title="簡單多邊形"></a>簡單多邊形</h3><p><img src="https://i.imgur.com/MiLC0cn.png" alt></p>
+<hr>
+<h3 id="簡單多邊形-射線"><a href="#簡單多邊形-射線" class="headerlink" title="簡單多邊形 - 射線"></a>簡單多邊形 - 射線</h3><p><img src="https://i.imgur.com/58zAwbo.png" alt></p>
+<hr>
+<h3 id="簡單多邊形-射線-1"><a href="#簡單多邊形-射線-1" class="headerlink" title="簡單多邊形 - 射線"></a>簡單多邊形 - 射線</h3><ul>
+<li>找射線，算線段交的次數</li>
+<li>奇數次為內部</li>
+<li>偶數次為外部</li>
+<li>時間 $O(n)$</li>
+</ul>
+<hr>
+<h3 id="簡單多邊形-bug"><a href="#簡單多邊形-bug" class="headerlink" title="簡單多邊形 - bug"></a>簡單多邊形 - bug</h3><p><img src="https://i.imgur.com/NY6B7vh.png" alt></p>
+<hr>
+<h3 id="簡單多邊形-bug-1"><a href="#簡單多邊形-bug-1" class="headerlink" title="簡單多邊形 - bug"></a>簡單多邊形 - bug</h3><p><img src="https://i.imgur.com/FMql3YZ.png" alt></p>
+<hr>
+<h3 id="簡單多邊形-解法"><a href="#簡單多邊形-解法" class="headerlink" title="簡單多邊形 - 解法"></a>簡單多邊形 - 解法</h3><ul>
+<li>點在線段上可以直接判斷</li>
+<li>若發生射線交於短點<ul>
+<li>重新 sample 一個射線，重新做</li>
+<li>應該不用試太多次就行了</li>
+</ul>
+</li>
+<li>射線的斜率大於題目給的精度<ul>
+<li>不可能交於輸入範圍的點上</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="凸包"><a href="#凸包" class="headerlink" title="凸包"></a>凸包</h2><hr>
+<h3 id="什麼是凸包"><a href="#什麼是凸包" class="headerlink" title="什麼是凸包?"></a>什麼是凸包?</h3><ul>
+<li>把一堆點包住的最小凸多邊形<br><img src="https://i.imgur.com/aX6PSyK.gif" alt></li>
+</ul>
+<hr>
+<h3 id="求出凸包"><a href="#求出凸包" class="headerlink" title="求出凸包"></a>求出凸包</h3><p><img src="https://i.imgur.com/yvWORoL.gif" alt></p>
+<hr>
+<h3 id="求出凸包-1"><a href="#求出凸包-1" class="headerlink" title="求出凸包"></a>求出凸包</h3><ul>
+<li>將點排序，先比 x 小的, x 相同時比 y 小的</li>
+<li>用 vector 的 <code>puhs_back()</code>, <code>pop_back()</code> 實作一個 stack, 存凸包上的點</li>
+<li>將排序好的點由小到大加入，如果跟 stack 頂端的兩個點會形成大於 180 度的角 (內凹)，刪掉 stack 頂端的點，重複直到不會有內凹的角</li>
+</ul>
+<hr>
+<h3 id="求出凸包-2"><a href="#求出凸包-2" class="headerlink" title="求出凸包"></a>求出凸包</h3><ul>
+<li>走到最右邊後，會得到下凸包</li>
+<li>將點的順序由大而小再依序加入，可以完成上凸包</li>
+<li>最後的 vector 就是凸包了</li>
+</ul>
+<hr>
+<h3 id="問題-最遠點對"><a href="#問題-最遠點對" class="headerlink" title="問題: 最遠點對"></a>問題: 最遠點對</h3><p><img src="https://i.imgur.com/v9Xz1Hp.gif" alt></p>
+<hr>
+<h3 id="問題-最遠點對-1"><a href="#問題-最遠點對-1" class="headerlink" title="問題: 最遠點對"></a>問題: 最遠點對</h3><ul>
+<li>變形<ul>
+<li>凸包的 “寬度”，最遠距離最小</li>
+<li>最大三角形</li>
+<li>最大四邊形</li>
+<li>最小的矩形包住所有點</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="增量法求凸包"><a href="#增量法求凸包" class="headerlink" title="增量法求凸包"></a>增量法求凸包</h3><p><img src="https://i.imgur.com/b80X3IH.gif" alt></p>
+<hr>
+<h3 id="增量法求凸包-1"><a href="#增量法求凸包-1" class="headerlink" title="增量法求凸包"></a>增量法求凸包</h3><ul>
+<li>如何找到要刪除的邊<br><img src="https://i.imgur.com/v7jnspo.png" alt></li>
+</ul>
+<hr>
+<h3 id="一堆圓的凸包-圓等半徑"><a href="#一堆圓的凸包-圓等半徑" class="headerlink" title="一堆圓的凸包 - 圓等半徑"></a>一堆圓的凸包 - 圓等半徑</h3><ul>
+<li>就是凸包</li>
+</ul>
+<hr>
+<h3 id="一堆圓的凸包"><a href="#一堆圓的凸包" class="headerlink" title="一堆圓的凸包"></a>一堆圓的凸包</h3><p><img src="https://i.imgur.com/GTmYxKo.png" alt></p>
+<hr>
+<h3 id="一堆圓的凸包-1"><a href="#一堆圓的凸包-1" class="headerlink" title="一堆圓的凸包"></a>一堆圓的凸包</h3><p><img src="https://i.imgur.com/eaZbOyf.png" alt></p>
+<hr>
+<h3 id="一堆圓的凸包-2"><a href="#一堆圓的凸包-2" class="headerlink" title="一堆圓的凸包"></a>一堆圓的凸包</h3><ul>
+<li>gift wrapping algorithm</li>
+<li>不斷找最外側的公切線</li>
+</ul>
+<hr>
+<h2 id="半平面交"><a href="#半平面交" class="headerlink" title="半平面交"></a>半平面交</h2><hr>
+<h3 id="什麼是半平面"><a href="#什麼是半平面" class="headerlink" title="什麼是半平面?"></a>什麼是半平面?</h3><ul>
+<li>$y&gt;2x-3$ 形成的半平面<br><img src="https://i.imgur.com/03tdX9K.png" alt></li>
+</ul>
+<hr>
+<h3 id="什麼是半平面交"><a href="#什麼是半平面交" class="headerlink" title="什麼是半平面交?"></a>什麼是半平面交?</h3><ul>
+<li>許多半平面的交集部分</li>
+<li>定理: 凸多邊形的交集還是凸多邊形<br><img src="https://i.imgur.com/Qmo3Ko5.png" alt></li>
+</ul>
+<hr>
+<h3 id="Duality-of-lines-and-points"><a href="#Duality-of-lines-and-points" class="headerlink" title="Duality of lines and points"></a>Duality of lines and points</h3><ul>
+<li>$P( (a,b) ) = L: y=ax-b$ </li>
+<li>$P( L: y=ax-b ) = (a,b)$ </li>
+<li><a href="https://pdfs.semanticscholar.org/810c/e0c19283481567c6545bf8c0cc8a4dcb8a1f.pdf" target="_blank" rel="noopener">https://pdfs.semanticscholar.org/810c/e0c19283481567c6545bf8c0cc8a4dcb8a1f.pdf</a></li>
+</ul>
+<hr>
+<h3 id="Duality-of-lines-and-points-1"><a href="#Duality-of-lines-and-points-1" class="headerlink" title="Duality of lines and points"></a>Duality of lines and points</h3><ul>
+<li>$P( P( (a,b) ) ) = (a,b)$</li>
+<li>若 $p$ 在 $L$ 上方 $\iff$ $P(L)$ 在 $P(p)$ 上方</li>
+<li>$p$ 與 $L$ 的鉛直差距 $=$ $P(L)$ 與 $P(p)$ 的鉛直差距</li>
+</ul>
+<hr>
+<h3 id="upper-lower-envelopes"><a href="#upper-lower-envelopes" class="headerlink" title="upper/lower envelopes"></a>upper/lower envelopes</h3><p><img src="https://i.imgur.com/vLSZKiQ.png" alt></p>
+<hr>
+<h3 id="凸包與-envelopes"><a href="#凸包與-envelopes" class="headerlink" title="凸包與 envelopes"></a>凸包與 envelopes</h3><p><img src="https://i.imgur.com/eoejXLA.png" alt></p>
+<hr>
+<h3 id="凸包與-envelopes-1"><a href="#凸包與-envelopes-1" class="headerlink" title="凸包與 envelopes"></a>凸包與 envelopes</h3><p><img src="https://i.imgur.com/YEHeoiL.png" alt></p>
+<hr>
+<h3 id="Voronoi-Diagram"><a href="#Voronoi-Diagram" class="headerlink" title="Voronoi Diagram"></a>Voronoi Diagram</h3><ul>
+<li>找到離自己最近的的<br><img src="https://i.imgur.com/Ee6QAPK.png" alt></li>
+</ul>
+<hr>
+<h3 id="Voronoi-Diagram-使用半平面交"><a href="#Voronoi-Diagram-使用半平面交" class="headerlink" title="Voronoi Diagram 使用半平面交"></a>Voronoi Diagram 使用半平面交</h3><ul>
+<li>跟其他點作中垂線，跟自己同側的半平面全部交集</li>
+</ul>
+<hr>
+<h2 id="聯集面積"><a href="#聯集面積" class="headerlink" title="聯集面積"></a>聯集面積</h2><hr>
+<h3 id="矩形聯集面積"><a href="#矩形聯集面積" class="headerlink" title="矩形聯集面積"></a>矩形聯集面積</h3><p><img src="https://i.imgur.com/7OQp00K.png" alt></p>
+<hr>
+<h3 id="矩形聯集面積-1"><a href="#矩形聯集面積-1" class="headerlink" title="矩形聯集面積"></a>矩形聯集面積</h3><ul>
+<li>掃描線</li>
+<li>線段樹</li>
+</ul>
+<hr>
+<h3 id="圓形聯集面積"><a href="#圓形聯集面積" class="headerlink" title="圓形聯集面積"></a>圓形聯集面積</h3><ul>
+<li><a href="https://oi.abcdabcd987.com/ciru/" target="_blank" rel="noopener">https://oi.abcdabcd987.com/ciru/</a><br><img src="https://i.imgur.com/SZs77u9.png" alt></li>
+</ul>
+<hr>
+<h2 id="模擬退火"><a href="#模擬退火" class="headerlink" title="模擬退火"></a>模擬退火</h2><hr>
+<h3 id="最小包圍圓"><a href="#最小包圍圓" class="headerlink" title="最小包圍圓"></a>最小包圍圓</h3><ul>
+<li>2D</li>
+<li>3D</li>
+</ul>
+<hr>
+<h2 id="蒙地卡羅"><a href="#蒙地卡羅" class="headerlink" title="蒙地卡羅"></a>蒙地卡羅</h2><p><img src="https://i.imgur.com/4seR32w.png" alt></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Geometry/">Geometry</a></li></ul>
+
+      
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/09/18/My-New-Post/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">My New Post</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="toc-sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
+    
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#計算幾何"><span class="nav-number">1.</span> <span class="nav-text">計算幾何</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本操作"><span class="nav-number">1.1.</span> <span class="nav-text">基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#幾何模板"><span class="nav-number">1.1.1.</span> <span class="nav-text">幾何模板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#向量加法"><span class="nav-number">1.1.2.</span> <span class="nav-text">向量加法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#向量減法"><span class="nav-number">1.1.3.</span> <span class="nav-text">向量減法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#向量內積-dot"><span class="nav-number">1.1.4.</span> <span class="nav-text">向量內積(dot)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#向量外積-cross-有向面積"><span class="nav-number">1.1.5.</span> <span class="nav-text">向量外積(cross) - 有向面積</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#問題"><span class="nav-number">1.1.6.</span> <span class="nav-text">問題</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#問題-1-點到直線的距離"><span class="nav-number">1.1.7.</span> <span class="nav-text">問題 1 : 點到直線的距離</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#問題-2-兩個直線的交點"><span class="nav-number">1.1.8.</span> <span class="nav-text">問題 2 : 兩個直線的交點</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#問題-3-線段相交判定"><span class="nav-number">1.1.9.</span> <span class="nav-text">問題 3 : 線段相交判定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#問題-3-線段相交判定-cont"><span class="nav-number">1.1.10.</span> <span class="nav-text">問題 3 : 線段相交判定(cont.)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#問題-3-線段相交判定-cont-1"><span class="nav-number">1.1.11.</span> <span class="nav-text">問題 3 : 線段相交判定(cont.)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#問題-4-簡單多邊形面積-三角型"><span class="nav-number">1.1.12.</span> <span class="nav-text">問題 4 : 簡單多邊形面積 - 三角型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#問題-4-簡單多邊形面積-凸多邊形"><span class="nav-number">1.1.13.</span> <span class="nav-text">問題 4 : 簡單多邊形面積 - 凸多邊形</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#問題-4-簡單多邊形面積-凸多邊形-1"><span class="nav-number">1.1.14.</span> <span class="nav-text">問題 4 : 簡單多邊形面積 - 凸多邊形</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#問題-4-簡單多邊形面積-凸多邊形-2"><span class="nav-number">1.1.15.</span> <span class="nav-text">問題 4 : 簡單多邊形面積 - 凸多邊形</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#問題-4-簡單多邊形面積"><span class="nav-number">1.1.16.</span> <span class="nav-text">問題 4 : 簡單多邊形面積</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#判斷點在圖形內"><span class="nav-number">1.2.</span> <span class="nav-text">判斷點在圖形內</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#圓形"><span class="nav-number">1.2.1.</span> <span class="nav-text">圓形</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#圓形-cont"><span class="nav-number">1.2.2.</span> <span class="nav-text">圓形(cont.)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#矩形-邊平行x軸-y軸"><span class="nav-number">1.2.3.</span> <span class="nav-text">矩形 (邊平行x軸,y軸)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#矩形-邊平行x軸-y軸-cont"><span class="nav-number">1.2.4.</span> <span class="nav-text">矩形 (邊平行x軸,y軸)(cont.)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三角形"><span class="nav-number">1.2.5.</span> <span class="nav-text">三角形</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三角形-cont"><span class="nav-number">1.2.6.</span> <span class="nav-text">三角形(cont.)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#凸多邊形"><span class="nav-number">1.2.7.</span> <span class="nav-text">凸多邊形</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#凸多邊形-1"><span class="nav-number">1.2.8.</span> <span class="nav-text">凸多邊形</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#凸多邊形-cont"><span class="nav-number">1.2.9.</span> <span class="nav-text">凸多邊形(cont.)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#凸多邊形多次查詢"><span class="nav-number">1.2.10.</span> <span class="nav-text">凸多邊形多次查詢</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#凸多邊形多次查詢-cont"><span class="nav-number">1.2.11.</span> <span class="nav-text">凸多邊形多次查詢(cont.)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#簡單多邊形"><span class="nav-number">1.2.12.</span> <span class="nav-text">簡單多邊形</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#簡單多邊形-射線"><span class="nav-number">1.2.13.</span> <span class="nav-text">簡單多邊形 - 射線</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#簡單多邊形-射線-1"><span class="nav-number">1.2.14.</span> <span class="nav-text">簡單多邊形 - 射線</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#簡單多邊形-bug"><span class="nav-number">1.2.15.</span> <span class="nav-text">簡單多邊形 - bug</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#簡單多邊形-bug-1"><span class="nav-number">1.2.16.</span> <span class="nav-text">簡單多邊形 - bug</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#簡單多邊形-解法"><span class="nav-number">1.2.17.</span> <span class="nav-text">簡單多邊形 - 解法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#凸包"><span class="nav-number">1.3.</span> <span class="nav-text">凸包</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什麼是凸包"><span class="nav-number">1.3.1.</span> <span class="nav-text">什麼是凸包?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#求出凸包"><span class="nav-number">1.3.2.</span> <span class="nav-text">求出凸包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#求出凸包-1"><span class="nav-number">1.3.3.</span> <span class="nav-text">求出凸包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#求出凸包-2"><span class="nav-number">1.3.4.</span> <span class="nav-text">求出凸包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#問題-最遠點對"><span class="nav-number">1.3.5.</span> <span class="nav-text">問題: 最遠點對</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#問題-最遠點對-1"><span class="nav-number">1.3.6.</span> <span class="nav-text">問題: 最遠點對</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#增量法求凸包"><span class="nav-number">1.3.7.</span> <span class="nav-text">增量法求凸包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#增量法求凸包-1"><span class="nav-number">1.3.8.</span> <span class="nav-text">增量法求凸包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一堆圓的凸包-圓等半徑"><span class="nav-number">1.3.9.</span> <span class="nav-text">一堆圓的凸包 - 圓等半徑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一堆圓的凸包"><span class="nav-number">1.3.10.</span> <span class="nav-text">一堆圓的凸包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一堆圓的凸包-1"><span class="nav-number">1.3.11.</span> <span class="nav-text">一堆圓的凸包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一堆圓的凸包-2"><span class="nav-number">1.3.12.</span> <span class="nav-text">一堆圓的凸包</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#半平面交"><span class="nav-number">1.4.</span> <span class="nav-text">半平面交</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什麼是半平面"><span class="nav-number">1.4.1.</span> <span class="nav-text">什麼是半平面?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什麼是半平面交"><span class="nav-number">1.4.2.</span> <span class="nav-text">什麼是半平面交?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Duality-of-lines-and-points"><span class="nav-number">1.4.3.</span> <span class="nav-text">Duality of lines and points</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Duality-of-lines-and-points-1"><span class="nav-number">1.4.4.</span> <span class="nav-text">Duality of lines and points</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#upper-lower-envelopes"><span class="nav-number">1.4.5.</span> <span class="nav-text">upper/lower envelopes</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#凸包與-envelopes"><span class="nav-number">1.4.6.</span> <span class="nav-text">凸包與 envelopes</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#凸包與-envelopes-1"><span class="nav-number">1.4.7.</span> <span class="nav-text">凸包與 envelopes</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Voronoi-Diagram"><span class="nav-number">1.4.8.</span> <span class="nav-text">Voronoi Diagram</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Voronoi-Diagram-使用半平面交"><span class="nav-number">1.4.9.</span> <span class="nav-text">Voronoi Diagram 使用半平面交</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#聯集面積"><span class="nav-number">1.5.</span> <span class="nav-text">聯集面積</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#矩形聯集面積"><span class="nav-number">1.5.1.</span> <span class="nav-text">矩形聯集面積</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#矩形聯集面積-1"><span class="nav-number">1.5.2.</span> <span class="nav-text">矩形聯集面積</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#圓形聯集面積"><span class="nav-number">1.5.3.</span> <span class="nav-text">圓形聯集面積</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模擬退火"><span class="nav-number">1.6.</span> <span class="nav-text">模擬退火</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#最小包圍圓"><span class="nav-number">1.6.1.</span> <span class="nav-text">最小包圍圓</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#蒙地卡羅"><span class="nav-number">1.7.</span> <span class="nav-text">蒙地卡羅</span></a></li></ol></li></ol>
+    
+    </div>
+  </aside>
+
+</section>
+        
+      </div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      	<div class="row">
+	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2019 - 2019 Hexo All Rights Reserved.</p>
+	      
+	      
+    		<p class="busuanzi_uv">
+				UV : <span id="busuanzi_value_site_uv"></span> |  
+				PV : <span id="busuanzi_value_site_pv"></span>
+		    </p>
+  		   
+		</div>
+
+		
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+    var allheader = document.getElementById("allheader");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight + "px";
+    if (allheader != null) {
+      contentdiv.style.minHeight = document.body.offsetHeight - allheader.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    } else {
+      contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    }
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/scripts.js"></script>
+
+
+
+
+  <script src="/js/dialog.js"></script>
+
+
+
+
+
+
+
+
+	<div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">Settings</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              Font Size
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            You've adjusted your font size.
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              Night Mode
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            Night mode is on.
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Info&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            Hexo
+          </div>
+          <div class="panel-body">
+            Copyright © 2019 John Doe All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
+  
+</body>
+</html>
