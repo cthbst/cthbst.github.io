@@ -3,26 +3,26 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>my new post | Hexo</title>
+  <title>有根樹子樹大小的 $\log$ 總和 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="blablahello worldhexo">
+  <meta name="keywords" content="amortized analysisunsolved">
   
   
   
   
-  <meta name="description" content="$\sum_{i=1}^{n} i^2$$$\sum_{i=1}^{n} i^2$$ HI 12345#include &amp;lt;bits/stdc++.h&amp;gt;using namespace std;int main()&amp;#123;&amp;#125;">
-<meta name="keywords" content="blabla,hello world,hexo">
+  <meta name="description" content="問題定義對於一個有根樹一個節點數為 $s$ 的子樹的根節點需要支付 $\log_2 s$ 單位的 cost一棵樹的總 cost 就是這棵樹中所有節點的 cost 相加 考慮滿足下面兩個條件的有根樹 $T$   葉節點的深度都相同 所有非葉節點至少都有兩個小孩  若這樣的有根樹有 $n$ 個葉節點，所需要的最大總花費複雜度是什麼?">
+<meta name="keywords" content="amortized analysis,unsolved">
 <meta property="og:type" content="article">
-<meta property="og:title" content="My New Post">
-<meta property="og:url" content="http://yoursite.com/2019/09/18/My-New-Post/index.html">
+<meta property="og:title" content="有根樹子樹大小的 $\log$ 總和">
+<meta property="og:url" content="http://yoursite.com/2019/12/11/log_sum_of_subtree_size/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="$\sum_{i=1}^{n} i^2$$$\sum_{i=1}^{n} i^2$$ HI 12345#include &amp;lt;bits/stdc++.h&amp;gt;using namespace std;int main()&amp;#123;&amp;#125;">
+<meta property="og:description" content="問題定義對於一個有根樹一個節點數為 $s$ 的子樹的根節點需要支付 $\log_2 s$ 單位的 cost一棵樹的總 cost 就是這棵樹中所有節點的 cost 相加 考慮滿足下面兩個條件的有根樹 $T$   葉節點的深度都相同 所有非葉節點至少都有兩個小孩  若這樣的有根樹有 $n$ 個葉節點，所需要的最大總花費複雜度是什麼?">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-12-11T12:02:49.381Z">
+<meta property="og:updated_time" content="2019-12-11T13:11:57.305Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="My New Post">
-<meta name="twitter:description" content="$\sum_{i=1}^{n} i^2$$$\sum_{i=1}^{n} i^2$$ HI 12345#include &amp;lt;bits/stdc++.h&amp;gt;using namespace std;int main()&amp;#123;&amp;#125;">
+<meta name="twitter:title" content="有根樹子樹大小的 $\log$ 總和">
+<meta name="twitter:description" content="問題定義對於一個有根樹一個節點數為 $s$ 的子樹的根節點需要支付 $\log_2 s$ 單位的 cost一棵樹的總 cost 就是這棵樹中所有節點的 cost 相加 考慮滿足下面兩個條件的有根樹 $T$   葉節點的深度都相同 所有非葉節點至少都有兩個小孩  若這樣的有根樹有 $n$ 個葉節點，所需要的最大總花費複雜度是什麼?">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -162,7 +162,7 @@
             
       <div id="content" class="outer">
         
-          <section id="main" style="float:none;"><article id="post-My-New-Post" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+          <section id="main" style="float:none;"><article id="post-log_sum_of_subtree_size" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -170,7 +170,7 @@
         
   
     <h1 class="thumb" class="article-title" itemprop="name">
-      My New Post
+      有根樹子樹大小的 $\log$ 總和
     </h1>
   
 
@@ -178,12 +178,12 @@
     
     <div class="article-meta">
       
-	<a href="/2019/09/18/My-New-Post/" class="article-date">
-	  <time datetime="2019-09-17T23:24:40.000Z" itemprop="datePublished">2019-09-18</time>
+	<a href="/2019/12/11/log_sum_of_subtree_size/" class="article-date">
+	  <time datetime="2019-12-10T16:00:00.000Z" itemprop="datePublished">2019-12-11</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/hexo/">hexo</a>
+    <a class="article-category-link" href="/categories/Algorithm/">Algorithm</a>
 
       
 	<a class="article-views">
@@ -197,10 +197,13 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>$\sum_{i=1}^{n} i^2$<br>$$\sum_{i=1}^{n} i^2$$</p>
-<p>HI</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+        <h1 id="問題定義"><a href="#問題定義" class="headerlink" title="問題定義"></a>問題定義</h1><p>對於一個有根樹<br>一個節點數為 $s$ 的子樹的根節點需要支付 $\log_2 s$ 單位的 cost<br>一棵樹的總 cost 就是這棵樹中所有節點的 cost 相加</p>
+<p>考慮滿足下面兩個條件的有根樹 $T$ </p>
+<ol>
+<li>葉節點的深度都相同</li>
+<li>所有非葉節點至少都有兩個小孩</li>
+</ol>
+<p>若這樣的有根樹有 $n$ 個葉節點，所需要的最大總花費複雜度是什麼?</p>
 
       
     </div>
@@ -210,7 +213,7 @@
       
       
         
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blabla/">blabla</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hello-world/">hello world</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/amortized-analysis/">amortized analysis</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/unsolved/">unsolved</a></li></ul>
 
       
 
@@ -220,15 +223,11 @@
     
 <nav id="article-nav">
   
-    <a href="/2019/11/20/Geometry/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Geometry
-        
-      </div>
-    </a>
   
+    <a href="/2019/11/20/Geometry/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Geometry</div>
+    </a>
   
 </nav>
 
@@ -241,7 +240,7 @@
     <div id="toc" class="toc-article">
     <strong class="toc-title">Contents</strong>
     
-        <ol class="nav">None</ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#問題定義"><span class="nav-number">1.</span> <span class="nav-text">問題定義</span></a></li></ol>
     
     </div>
   </aside>
